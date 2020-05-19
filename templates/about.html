@@ -3,4 +3,24 @@
 {% block content %}
     <h1>About</h1>
     <p>This is a template</p>
-{% endblock %}
+
+<p>
+    {{ my_text }}, {{ my_number }}, {{ my_list }}
+</p>
+
+<ui>
+    <li>Item 1</li>
+    <li>Item 2</li>
+</ui>
+
+<ui>
+{% for abc in my_list %}
+    {% if abc == 312 %}
+        <li>{{ forloop.counter }} - {{ abc|add:22 }}</li>
+    {% else %}
+        <li>{{ forloop.counter }} - {{ abc }}</li>
+    {% endif %}
+    {% endfor %}
+</ui>
+
+{% endblock content %}
